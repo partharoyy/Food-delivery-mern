@@ -13,6 +13,7 @@ export default {
         'header-title-font-size': 'max(4.5vw, 22px)',
         'header-button-font-size': 'max(1vw, 13px)',
         'explore-p-font-size': 'max(1.4vw,16px)',
+        'food-display-title-font-size': 'max(2vw, 24px)',
       },
       keyframes: {
         fadeIn: {
