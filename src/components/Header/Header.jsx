@@ -1,5 +1,3 @@
-import React from 'react';
-
 function Header() {
   return (
     <div className='h-[34vw] my-[30px] mx-auto bg-header-image bg-contain relative bg-no-repeat'>

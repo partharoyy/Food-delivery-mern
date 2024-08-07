@@ -21,6 +21,7 @@ export default {
       },
       width: {
         'app-download-icons-width': 'max(3vw, 120px)',
+        'login-popup-width': 'max(23vw, 330px)',
       },
       keyframes: {
         fadeIn: {
