@@ -28,3 +28,19 @@
 .login-signup {
   @apply text-red-400 font-medium cursor-pointer;
 }
+
+.cart-item-title {
+  @apply grid grid-cols-custom-grid items-center text-gray-500 text-cart-item-title-size;
+}
+
+.cart-items-item {
+  @apply my-[10px] mx-[0px] text-black;
+}
+
+.cart-total-details {
+  @apply flex justify-between text-[#555];
+}
+
+.cart-dot {
+  @apply absolute min-w-[10px] min-h-[10px] bg-red-400 rounded-[50%] top-[-8px] right-[-8px];
+}

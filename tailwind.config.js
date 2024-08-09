@@ -3,6 +3,9 @@ export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
+      gridTemplateColumns: {
+        'custom-grid': '1fr 1.5fr 1fr 1fr 1fr 0.5fr',
+      },
       fontFamily: {
         sans: ['Outfit', 'sans-serif'],
       },
@@ -15,13 +18,17 @@ export default {
         'explore-p-font-size': 'max(1.4vw,16px)',
         'food-display-title-font-size': 'max(2vw, 24px)',
         'app-download-font-size': 'max(3vw, 20px)',
+        'cart-item-title-size': 'max(1vw, 12px)',
       },
       gap: {
         'app-download-icons-gap': 'max(2vw, 10px)',
+        'cart-gap': 'max(12vw, 20px)',
       },
       width: {
         'app-download-icons-width': 'max(3vw, 120px)',
         'login-popup-width': 'max(23vw, 330px)',
+        'cart-button': 'max(15vw, 200px)',
+        'cart-promo-button': 'max(10vw, 150px)',
       },
       keyframes: {
         fadeIn: {
