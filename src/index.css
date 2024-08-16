@@ -44,3 +44,11 @@
 .cart-dot {
   @apply absolute min-w-[10px] min-h-[10px] bg-red-400 rounded-[50%] top-[-8px] right-[-8px];
 }
+
+.place-order-input {
+  @apply mb-[15px] w-full p-[10px] border-[1px] border-[#c5c5c5] rounded-[4px] outline-red-400;
+}
+
+.multi-fields {
+  @apply flex gap-[10px];
+}

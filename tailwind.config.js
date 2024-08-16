@@ -30,6 +30,10 @@ export default {
         'cart-button': 'max(15vw, 200px)',
         'cart-promo-button': 'max(10vw, 150px)',
       },
+      maxWidth: {
+        'place-order': 'max(30%, 500px)',
+        'place-order-right-side': 'max(40%, 500px)',
+      },
       keyframes: {
         fadeIn: {
           '0%': { opacity: '0' },
