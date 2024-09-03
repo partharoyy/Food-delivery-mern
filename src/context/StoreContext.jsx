@@ -1,10 +1,12 @@
-import { createContext, useState } from 'react';
-import { food_list } from '../assets/assets';
+import { createContext, useState } from "react";
+import { food_list } from "../assets/assets";
 
 export const StoreContext = createContext(null);
 
 const StoreContextProvider = (props) => {
   const [cartItems, setCartItems] = useState({});
+  const [token, setToken] = useState("");
+  const url = "http://localhost:4000";
 
   const addToCart = (itemId) => {
     setCartItems((prev) => ({
@@ -38,6 +40,9 @@ const StoreContextProvider = (props) => {
     addToCart,
     removeFromCart,
     getTotalCartAmount,
+    token,
+    setToken,
+    url,
   };
 
   return <StoreContext.Provider value={contextValue}>{props.children}</StoreContext.Provider>;
