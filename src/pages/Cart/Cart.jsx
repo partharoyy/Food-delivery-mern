@@ -1,9 +1,9 @@
-import { useContext } from 'react';
-import { StoreContext } from '../../context/StoreContext';
-import { useNavigate } from 'react-router-dom';
+import { useContext } from "react";
+import { StoreContext } from "../../context/StoreContext";
+import { useNavigate } from "react-router-dom";
 
 function Cart() {
-  const { cartItems, food_list, removeFromCart, getTotalCartAmount } = useContext(StoreContext);
+  const { cartItems, food_list, removeFromCart, getTotalCartAmount, url } = useContext(StoreContext);
 
   const navigate = useNavigate();
 
@@ -25,7 +25,7 @@ function Cart() {
             return (
               <div key={item._id}>
                 <div className='cart-item-title cart-items-item'>
-                  <img src={item.image} alt={item.image} className='w-[50px]' />
+                  <img src={url + "/images/" + item.image} alt={item.image} className='w-[50px]' />
                   <p>{item.name}</p>
                   <p>${item.price}</p>
                   <p>{cartItems[item._id]}</p>
@@ -60,7 +60,7 @@ function Cart() {
             </div>
           </div>
           <button
-            onClick={() => navigate('/order')}
+            onClick={() => navigate("/order")}
             className='border-none text-white bg-red-400 w-cart-button py-[12px] px-0 rounded-[4px] cursor-pointer'
           >
             PROCEED TO CHECKOUT

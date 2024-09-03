@@ -1,11 +1,20 @@
 import { useContext, useState } from "react";
 import { assets } from "../../assets/assets.js";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { StoreContext } from "../../context/StoreContext.jsx";
 
 function Navbar({ setShowLogin }) {
   const [menu, setMenu] = useState("home");
-  const { getTotalCartAmount, token } = useContext(StoreContext);
+  const { getTotalCartAmount, token, setToken } = useContext(StoreContext);
+
+  const navigate = useNavigate();
+
+  const logout = () => {
+    localStorage.removeItem("token");
+    setToken("");
+    navigate("/");
+  };
+
   return (
     <div className='py-[20px] px-[0px] flex justify-between items-center'>
       <Link to='/'>
@@ -56,14 +65,17 @@ function Navbar({ setShowLogin }) {
         ) : (
           <div className='relative group'>
             <img src={assets.profile_icon} alt='' />
-            <ul className='absolute right-0 z-[1] hidden hover:bg-[#fff2ef] hover:py-[12px] hover:px-[25px] hover:rounded-[4px] hover:border-[1px] hover:border-red-400 hover:outline-[2px] hover:outline-white group-hover:flex'>
-              <li className=''>
-                <img src={assets.bag_icon} alt='' />
+            <ul className='absolute right-0 z-[1] hidden group-hover:flex flex-col gap-[10px] bg-[#fff2ef] py-[12px] px-[25px] rounded-[4px] border-[1px] border-tomato outline-[2px] outline-white'>
+              <li className='flex items-center gap-[10px] cursor-pointer justify-center hover:text-red-400'>
+                <img src={assets.bag_icon} alt='' className='w-[20px]' />
                 <p>Orders</p>
               </li>
               <hr />
-              <li className='flex items-center gap-[5px]'>
-                <img src={assets.logout_icon} alt='' />
+              <li
+                className='flex items-center gap-[10px] cursor-pointer justify-center hover:text-red-400'
+                onClick={logout}
+              >
+                <img src={assets.logout_icon} alt='' className='w-[20px]' />
                 <p>Logout</p>
               </li>
             </ul>

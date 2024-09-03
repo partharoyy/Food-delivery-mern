@@ -1,14 +1,14 @@
-import React, { useContext } from 'react';
-import { assets } from '../../assets/assets';
-import { StoreContext } from '../../context/StoreContext';
+import React, { useContext } from "react";
+import { assets } from "../../assets/assets";
+import { StoreContext } from "../../context/StoreContext";
 
 function FoodItem({ id, name, price, description, image }) {
-  const { cartItems, addToCart, removeFromCart } = useContext(StoreContext);
+  const { cartItems, addToCart, removeFromCart, url } = useContext(StoreContext);
 
   return (
     <div className='w-[100%] shadow-md animate-fadeIn'>
       <div className='relative '>
-        <img src={image} alt='' className='w-[100%] rounded-tl-xl rounded-tr-xl' />
+        <img src={url + "/images/" + image} alt='' className='w-[100%] rounded-tl-xl rounded-tr-xl' />
         {!cartItems[id] ? (
           <img
             src={assets.add_icon_white}
